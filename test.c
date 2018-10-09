@@ -3,7 +3,7 @@ int main()
 {
 int x;
 scanf("%d", &x);
-printf("%d 4commit", x+1);
+printf("%d 5commit", x+1);
 return 0;
 }
 
