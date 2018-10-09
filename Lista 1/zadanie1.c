@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-int x;
+char napis[] = "ABRAKADABRA";
 scanf("%d", &x);
 printf("%d SUPER commit", x+1);
 return 0;
