@@ -2,8 +2,8 @@
 int main()
 {
 char napis[] = "ABRAKADABRA";
-scanf("%d", &x);
-printf("%d SUPER commit", x+1);
+for(int i=0; i<strlen(napis); i++)
+    printf("%c ",napis[i]);
 return 0;
 }
 
