@@ -2,7 +2,7 @@
 #include <string.h>
 int main()
 {
-    char napis[] = "ABRAKA";
+    char napis[] = "ABRAKADABRA";
     int dlugosc = strlen(napis);
     for(int i=dlugosc; i>0; i--) //i mowi ile znakow jest w danym wierszu
     {   
