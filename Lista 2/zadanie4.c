@@ -20,7 +20,7 @@ int main()
     int ile_pierwszych_wczesniej = 0;
     for(int n=2; n<=zakres;n++){
         printf("%d;%.3f\n",n,ile_pierwszych_wczesniej/(n/log(n)));
-        fprintf("%d;%.3f\n",n,ile_pierwszych_wczesniej/(n/log(n))); //zapisz do pliku
+        fprintf(fp,"%d;%.3f\n",n,ile_pierwszych_wczesniej/(n/log(n))); //zapisz do pliku
         ile_pierwszych_wczesniej += czy_pierwsza[n];
     }
     fclose(fp);
