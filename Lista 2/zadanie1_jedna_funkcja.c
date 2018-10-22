@@ -3,17 +3,6 @@ int banknoty = [200,100,50,20,10];
 int monety1 = [5,2,1];
 int monety2 = [50,20,10,5,2,1]
 
-void dziel_banknoty(int kwota){
-	printf("banknoty:\n");
-	for(int i=0; i<ile_nominalow; i++){
-     	   int ile_nominalu = kwota/banknoty[i];
-     	   if(ile_nominalu>0)
-		{
-       	         	printf("    %d x %d zł\n",ile_nominalu, banknoty[i]);
-	        	kwota %= nominaly[i];
-		}
-	}
-}
 
 int main()
 {

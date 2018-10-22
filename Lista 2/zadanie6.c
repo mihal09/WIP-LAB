@@ -18,15 +18,28 @@ int n=1000;
 
 int main()
 {	
-	int tablica[n+1];
+	int tablica[n];
+	int wypisane[n];
+	for(int i=0;i<n;i++)
+		wypisane[i]=0;
 	printf("Liczby doskonale mniejsze od %d:\n",n);
-	for(int i=1; i<=n; i++){
+	for(int i=1; i<n; i++){
 		int ile = sigma(i);
 		tablica[i] = ile;
 		if(i==ile)
 			printf("%d\n",i);
 	}
-	for(int i=1; i<=n; i++){
+
+	printf("Pary liczb zaprzyjaznionych mniejszych od %d:\n",n);
+	for(int i=1; i<n; i++){
+		int m = tablica[i];
+	//	if(m==i) continue;
+		if(tablica[m]==i){
+			if(wypisane[i]==0)
+				printf("%d i %d\n",i, m);
+			wypisane[m] = 1;
+			wypisane[i] = 1;
+		}
 	}
 	
 	 
