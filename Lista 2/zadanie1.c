@@ -38,7 +38,7 @@ void dziel_monety2(int grosze){
 
 int main()
 {
-    int zl, gr, kwota;
+    int zl, gr;
     printf("podaj liczbę złoty: ");
     scanf("%d", &zl);
     printf("podaj liczbę groszy: ");
