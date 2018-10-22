@@ -7,7 +7,7 @@ int main()
         i++;
         left += (double)1/i;
     }
-    printf("Najmniejsze n: %d",i);
+    printf("Najmniejsze n: %d\n",i);
     return 0;
 }
 
