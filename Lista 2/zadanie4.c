@@ -10,15 +10,15 @@ int main()
         if(czy_pierwsza[n]){  //jesli jest pierwsza, to usuwamy z listy jej wielokrotnosci
             int k=n+n;
             while(k<=zakres){
-                czy_pierwsza[k] = 0;
+               czy_pierwsza[k] = 0;
                k+=n;
             }
         }
     }
     int ile_pierwszych_wczesniej = 0;
     for(int n=2; n<=zakres;n++){
+	ile_pierwszych_wczesniej += czy_pierwsza[n];
         printf("%d;%f\n",n,ile_pierwszych_wczesniej/(n/log(n)));
-        ile_pierwszych_wczesniej += czy_pierwsza[n];
     }
     return 0;
 }
