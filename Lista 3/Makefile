@@ -2,26 +2,17 @@ CC=clang
 CFLAGS=-Wextra --pedantic -std=c11
 LDFLAGS=-lm
 
-PROGS=zadanie1 zadanie2 zadanie3 \
-zadanie4 zadanie5 zadanie6
+all: zadanie1
 
-all: $(PROGS)
+zadanie1: zadanie1.o palindrom.o
+	clang -o zadanie1 zadanie1.o palindrom.o
 
-analiza:
-	@echo
-	@echo "*****************************************"
-	@echo "**  Analiza statyczna programem clang  **"
-	@echo "*****************************************"
-	@echo
-	clang --analyze *.c
+zadanie1.o: zadanie1.c
+	clang -c zadanie1.c
 
-check:
-	@echo
-	@echo "********************************************"
-	@echo "**  Analiza statyczna programem cppcheck  **"
-	@echo "********************************************"
-	@echo
-	cppcheck --enable=all --std=c11 *.c
+palindrom.o : palindrom.c
+	clang -c palindrom.c
+
 clean:
-	rm -f $(PROGS) *.o *.plist
+	rm -f main *.o *.plist
 
