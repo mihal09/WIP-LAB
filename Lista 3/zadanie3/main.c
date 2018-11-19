@@ -1,9 +1,8 @@
 #include <stdio.h>
-#include "palindrom.h"
+#include "phi.h"
 
 int main(){
-	char napis[200];
-	scanf("%s",napis);
-	printf("%d",palindrom(napis));
-	
+	long int n;
+	scanf("%ld",n);
+	printf("%d",phi(n));
 }

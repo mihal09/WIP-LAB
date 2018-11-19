@@ -1,9 +1,12 @@
 #include <stdio.h>
-#include "palindrom.h"
+#include <math.h>
+#include "rozwiazanie.h"
 
 int main(){
-	char napis[200];
-	scanf("%s",napis);
-	printf("%d",palindrom(napis));
-	
+	double a = 2;
+	double b = 4;
+	for(int k=1;k<=8;k++){
+		double eps = pow(10,-k);
+		printf("10^(-%d) - %lf",k,rozwiazanie(a,b,eps));
+	}
 }
