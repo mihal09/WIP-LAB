@@ -10,4 +10,5 @@ int phi(long int n)
 		if(nwd(n,i)==1)
 			count++;
 	}
+	return count;
 }

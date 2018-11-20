@@ -1,7 +1,7 @@
 struct agent{
     int x;
     int y;
-}
+};
 
 struct agent newagent(int x, int y);
 void north(struct agent *a);

@@ -5,7 +5,7 @@ LDFLAGS=-lm
 all: main
 
 main: main.o agents.o
-	clang -o main main.o agents.o
+	clang -o main main.o agents.o -lm
 
 main.o: main.c
 	clang -c main.c

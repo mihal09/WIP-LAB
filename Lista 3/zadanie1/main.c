@@ -4,6 +4,9 @@
 int main(){
 	char napis[200];
 	scanf("%s",napis);
-	printf("%d",palindrom(napis));
+	if(palindrom(napis))
+		printf("To jest palindrom\n");
+	else
+		printf("To nie jest palindrom\n");
 	
 }
