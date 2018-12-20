@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1543075734 source:c:\users\micha³\desktop\testmatch\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	"match.h"
+
+1543075657 c:\users\micha³\desktop\testmatch\match.h
+
