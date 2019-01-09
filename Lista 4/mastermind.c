@@ -38,7 +38,8 @@ int ileBiale(Uklad *wzor, Uklad *strzal){
     {
         if(!sprawdzone_kolory[wzor->kolory[i]]){
             for(int j=0; j<dlugosc; j++){
-                if(strzal->kolory[j]==wzor->kolory[i]){
+                if(strzal->kolory[j]==wzor->kolory[i] && wzor->kolory[i]!=strzal->kolory[i] && wzor->kolory[j]!=strzal->kolory[j]){
+                    //printf("i: %d  j: %d\n", i,j);
                     ile++;
                     break;
                 }
@@ -72,8 +73,8 @@ int ileBiale(Uklad *wzor, Uklad *strzal){
 //            }
 //        }
 //    }
+//ile -= ileCzarne(wzor, strzal);
 
-    ile -= ileCzarne(wzor, strzal);
     return ile;
 }
 
@@ -195,58 +196,22 @@ void MasterMind(){
 
 int main(void){
 
-    MasterMind();
+  MasterMind();
 
-//  ilosc = (int)pow(s,dlugosc);
-//	Uklad mozliwosci[ilosc];
-//	bool temp_mozliwosci[ilosc];
-//	int biale, czarne;
-//	for(int i=0; i<ilosc; i++){
-//        int calosc = i;
-//        for(int k=0; k<dlugosc; k++){
-//            mozliwosci[i].kolory[k]=calosc%s;
-//            calosc/=s;
-//        }
-//        mozliwosci[i].czyMozliwy = true;
-//	}
-//    int q[] = {0,0,0,0};
-//    int w[] = {3,2,1,1};
-//    int e[] = {3,2,1,0};
-//
-//    int r[] = {1,3,2,2};
-//    Uklad a = createUklad(q);
-//    Uklad b = createUklad(w);
-//    Uklad c = createUklad(e);
-//    Uklad wzor = createUklad(r);
-//    printf("XD %d - %d\n",ileBiale(wzor,c),ileCzarne(wzor,c));
-//    redukuj(0,0,mozliwosci, a);
-//    redukuj(4,0,mozliwosci, b);
-//    printf("ILE 2 : %d\n",ileMozliwychKodow(mozliwosci));
-////    for(int i=0; i<ilosc; i++){
-////                    if(mozliwosci[i].czyMozliwy)
-////                        printf("[%d] [%d] [%d] [%d]\n",mozliwosci[i].kolory[0],mozliwosci[i].kolory[1],mozliwosci[i].kolory[2],mozliwosci[i].kolory[3]);
-////    }
-//    redukuj(3,0,mozliwosci, c);
-//   printf("ILE 3 : %d\n",ileMozliwychKodow(mozliwosci));
-////    printf("------------------\n");
-////    redukuj(0,0,mozliwosci, strzal);
-////    printf("ILE 2 : %d",ileMozliwychKodow(mozliwosci));
-////        printf("SPELNIA\n");
-//   // printf ("na swoim: %d, nie na swoim: %d\n",ileCzarne(wzor, strzal),ileBiale(wzor, strzal));
 //    Uklad a,b;
 //
-//    a.kolory[0] = 1;
-//    a.kolory[1] = 1;
-//    a.kolory[2] = 2;
+//    a.kolory[0] = 2;
+//    a.kolory[1] = 3;
+//    a.kolory[2] = 4;
 //    a.kolory[3] = 2;
 //
-//    b.kolory[0] = 1;
-//    b.kolory[1] = 2;
-//    b.kolory[2] = 3;
-//    b.kolory[3] = 3;
-
-   // 1233
-   // 1122
+//    b.kolory[0] = 3;
+//    b.kolory[1] = 5;
+//    b.kolory[2] = 2;
+//    b.kolory[3] = 2;
+//
+////    3522          6665
+////    2342          1564
 //    int biale = ileBiale(&b,&a);
 //    int czarne = ileCzarne(&b,&a);
 //
