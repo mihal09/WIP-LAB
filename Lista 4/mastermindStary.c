@@ -17,12 +17,7 @@ typedef struct {
 
 Uklad mozliwosci[ilosc];
 
-int min(int a, int b){
-    if(a < b)
-        return a;
-    else
-        return b;
-}
+
 
 int ileCzarne(Uklad *wzor, Uklad *strzal){
     int ile=0;
@@ -35,40 +30,39 @@ int ileCzarne(Uklad *wzor, Uklad *strzal){
 
 int ileBiale(Uklad *wzor, Uklad *strzal){
     int ile=0;
-    //WERSJA DOSLOWNA
-//    bool sprawdzone_kolory[s];
-//    for(int kolor=0; kolor<s; kolor++)
-//        sprawdzone_kolory[kolor]=false;
-//
-//    for(int i=0; i<dlugosc; i++)
-//    {
-//        if(!sprawdzone_kolory[wzor->kolory[i]]){
-//            for(int j=0; j<dlugosc; j++){
-//                if(strzal->kolory[j]==wzor->kolory[i] && wzor->kolory[i]!=strzal->kolory[i] && wzor->kolory[j]!=strzal->kolory[j]){
-//                    //printf("i: %d  j: %d\n", i,j);
-//                    ile++;
-//                    break;
-//                }
-//            }
-//
-//            sprawdzone_kolory[wzor->kolory[i]]=true;
-//        }
-//    }
+    bool sprawdzone_kolory[s];
+    for(int kolor=0; kolor<s; kolor++)
+        sprawdzone_kolory[kolor]=false;
 
-    //WERSJA POSREDNIA
-    for(int kolor=0; kolor<s; kolor++){
-        int ileDanegoKoloruStrzal = 0, ileDanegoKoloruWzor = 0, ilePoprawnych = 0;
-        for(int i=0; i<dlugosc; i++){
-            if(strzal->kolory[i]==kolor)
-                ileDanegoKoloruStrzal++;
-            if(wzor->kolory[i]==kolor)
-                ileDanegoKoloruWzor++;
-            if(strzal->kolory[i] == wzor->kolory[i] && wzor->kolory[s] == kolor)
-                ilePoprawnych++;
+    for(int i=0; i<dlugosc; i++)
+    {
+        if(!sprawdzone_kolory[wzor->kolory[i]]){
+            for(int j=0; j<dlugosc; j++){
+                if(strzal->kolory[j]==wzor->kolory[i] && wzor->kolory[i]!=strzal->kolory[i] && wzor->kolory[j]!=strzal->kolory[j]){
+                    //printf("i: %d  j: %d\n", i,j);
+                    ile++;
+                    break;
+                }
+            }
+
+            sprawdzone_kolory[wzor->kolory[i]]=true;
         }
-        ile += min(ileDanegoKoloruStrzal, ileDanegoKoloruWzor) - ilePoprawnych;
     }
 
+    //TO SAMO ALE INNY KOD
+//    for(int kolor=0; kolor<s; kolor++){
+//        for(int i=0; i<dlugosc; i++){
+//            if(strzal->kolory[i]==kolor){
+//                for(int j=0; j<dlugosc; j++){
+//                    if(wzor->kolory[j]==kolor){
+//                        ile++;
+//                        break;
+//                    }
+//                }
+//                break;
+//            }
+//        }
+//    }
 
 // PRAWDZIWE ZASADY Z BIALYMI
 //    for(int i=0; i<dlugosc; i++){
@@ -202,26 +196,26 @@ void MasterMind(){
 
 int main(void){
 
-//  MasterMind();
+  MasterMind();
 
-    Uklad a,b;
-    b.kolory[0] = 1;
-    b.kolory[1] = 2;
-    b.kolory[2] = 2;
-    b.kolory[3] = 1;
-  //  --------------
-    a.kolory[0] = 2;
-    a.kolory[1] = 1;
-    a.kolory[2] = 1;
-    a.kolory[3] = 3;
-
-
-//    3522          6665
-//    2342          1564
-    int biale = ileBiale(&b,&a);
-    int czarne = ileCzarne(&b,&a);
-
-    printf("XD biale-czarne: %d - %d\n",biale,czarne);
+//    Uklad a,b;
+//
+//    a.kolory[0] = 2;
+//    a.kolory[1] = 3;
+//    a.kolory[2] = 4;
+//    a.kolory[3] = 2;
+//
+//    b.kolory[0] = 3;
+//    b.kolory[1] = 5;
+//    b.kolory[2] = 2;
+//    b.kolory[3] = 2;
+//
+////    3522          6665
+////    2342          1564
+//    int biale = ileBiale(&b,&a);
+//    int czarne = ileCzarne(&b,&a);
+//
+//    printf("XD biale-czarne: %d - %d\n",biale,czarne);
 
 
 
