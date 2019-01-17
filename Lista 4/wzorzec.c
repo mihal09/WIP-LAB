@@ -74,8 +74,7 @@ bool match(char wzor[], char porownywany[], int poziom){
 
 int main()
 {
-
-    if(match("a*b*b*c","aQQQbWc",0))
+    if(match("a********c","ababababab",0))
         printf("tak");
     else
         printf("nie");

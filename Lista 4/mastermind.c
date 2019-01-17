@@ -70,7 +70,7 @@ int ileBiale(Uklad *wzor, Uklad *strzal){
     }
 
 
-// PRAWDZIWE ZASADY Z BIALYMI
+// DZIWNE ZASADY Z BIALYMI
 //    for(int i=0; i<dlugosc; i++){
 //        for(int j=0; j<dlugosc; j++){
 //            if(strzal->kolory[i]==wzor->kolory[j]){
